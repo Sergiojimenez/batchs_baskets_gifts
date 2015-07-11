@@ -8,13 +8,13 @@
 */
 @mixin bp($point) {
 	@if $point == biggie {
-		@media (max-width : 1600px) { @content; }
+		@media (min-width : 1600px) { @content; }
 	}
 	@if $point == tablet {
-		@media (max-width : 1024px) { @content; }
+		@media (min-width : 1024px) { @content; }
 	}
 	@else if $point == phone {
-		@media (max-width : 768px) { @content; }
+		@media (min-width : 768px) { @content; }
 	}
 }
 

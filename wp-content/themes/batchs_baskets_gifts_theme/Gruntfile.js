@@ -129,7 +129,7 @@ module.exports = function(grunt) {
                     src : ['style.css', 'assets/js/*.js', 'assets/images/**/*.{png,jpg,jpeg,gif,webp,svg}']
                 },
                 options: {
-                    proxy: "http://localhost:3000/batchs_baskets_gifts/",
+                    proxy: "localhost:8888/batchs_baskets_gifts/",
                     watchTask: true
                 }
             }

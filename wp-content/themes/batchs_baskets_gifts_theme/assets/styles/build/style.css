@@ -3,7 +3,7 @@
 Theme Name: batchs_baskets_gifts_theme
 Author: Sergio Jiménez
 Author URI: http://sergiojimenez.me
-Description: WordPress Starter Theme for batchs_baskets_gifts_theme.
+Description: WordPress starter theme for batchs_baskets_gifts_theme.
 Version: 1.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -550,10 +550,6 @@ img {
 /* ==========================================================================
    Typography
    ========================================================================== */
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
-}
-
 p {
   margin-bottom: 1.5em;
 }
@@ -763,6 +759,31 @@ address {
 /* ==========================================================================
    Menus
    ========================================================================== */
+.mainmenu:before, .mainmenu:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.mainmenu:after {
+  clear: both;
+}
+.mainmenu-family {
+  width: 100%;
+  padding: 0.5em;
+}
+@media (min-width: 768px) {
+  .mainmenu-family {
+    float: left;
+    padding: 0.5em;
+    width: 33.3%;
+  }
+}
+.mainmenu-img {
+  width: 100%;
+  height: auto;
+}
+
 .main-navigation {
   clear: both;
   display: block;
@@ -1074,6 +1095,32 @@ object {
   h2,
   h3 {
     page-break-after: avoid;
+  }
+}
+/* ==========================================================================
+   About Us modul
+   ========================================================================== */
+.aboutus {
+  background: lime;
+}
+.aboutus:before, .aboutus:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.aboutus:after {
+  clear: both;
+}
+.aboutus-img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .aboutus-img {
+    padding: 0.5em;
+    width: 33.3%;
+    float: left;
   }
 }
 
