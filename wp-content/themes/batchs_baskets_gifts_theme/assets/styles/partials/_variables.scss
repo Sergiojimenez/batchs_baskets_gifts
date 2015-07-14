@@ -2,11 +2,15 @@
    Variables
    ========================================================================== */
 
-// Font Face
-// @include fontface('FONT_NAME', 'assets/fonts/', 'FONT_FAMILY');
+// Google Fonts
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Roboto+Condensed:400,700);
+
+// Font Variables
+$oswald: 'Oswald', sans-serif;   
+$roboto: 'Roboto', sans-serif;
 
 // Structure
-$pageWidth: 1000px;
+$pageWidth: 1500px;
 
 // Text Selection
 $selectionColor: orange;
@@ -14,3 +18,19 @@ $selectionColor: orange;
 // Colors
 $red: red;
 $blue: blue;
+
+//website colors
+$c-red: #c3170b;
+$c-red-dark: #a50a05;
+
+$c-blue: #073e41;
+$c-blue-dark: #031f20;
+
+$c-black: #312620;
+$c-black-dark: #181310;
+
+$c-orange: #ffd6ac;
+$c-orange-dark: #fec182;
+
+$c-green: #5f886a;
+$c-green-dark: #2f4b34;

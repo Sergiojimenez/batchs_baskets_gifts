@@ -1,29 +1,6 @@
 /* ==========================================================================
    Menus
    ========================================================================== */
-.mainmenu{
-	@include clearfix;
-
-	&-family {
-	  width: 100%;
-	  padding: 0.5em;
-		@include bp(phone) { 
-			float: left;
-			padding: 0.5em;
-			width: 33.3%; 
-		} 
-	}
-
-	&-img {
-	  width: 100%;
-	  height: auto;
-	}
-}
-
-
-
-
-
 
 .main-navigation {
 	clear: both;

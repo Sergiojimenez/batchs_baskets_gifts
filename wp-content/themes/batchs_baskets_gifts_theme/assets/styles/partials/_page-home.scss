@@ -2,4 +2,236 @@
    Home Page Template
    ========================================================================== */
 
-body.home {}
+/* ==========================================================================
+   Main modul
+   ========================================================================== */
+
+.mainmenu{
+	@include clearfix;
+	
+	&-products {
+	  position: relative;	
+	  width: 100%;
+	  padding: 0.5em;
+	  float: left;
+		@include bp(phone) { 
+			float: left;
+			padding: 0.5em;
+			width: 33.3%; 
+		} 
+	}
+	&-mask {
+		background: black;
+		position:absolute;
+		display: inline-block;
+		top: 0;
+    	left: 0;
+    	min-width: 100%;
+    	min-height: 100%;
+    	padding: 0.5em;
+	}
+	&-img {
+	  width: 100%;
+	  height: auto;
+	}
+}
+
+/* ==========================================================================
+   Main menu products, animation effet called "ruby"
+   ========================================================================== */
+
+%extend_1 {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.mainmenu-products figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 1%;
+	min-width: 98%;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	background: black;
+	text-align: center;
+	cursor: pointer;
+	img {
+		position: relative;
+		display: block;
+		min-height: 100%;
+		max-width: 100%;
+		opacity: 0.8;
+	}
+	figcaption {
+		padding: 2em;
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.25em;
+		backface-visibility: hidden;
+		@extend %extend_1;
+		> a {
+			@extend %extend_1;
+			z-index: 1000;
+			text-indent: 200%;
+			white-space: nowrap;
+			font-size: 0;
+			opacity: 0;
+		}
+	}
+	figcaption::before {
+		pointer-events: none;
+	}
+	figcaption::after {
+		pointer-events: none;
+	}
+	h2 {
+		word-spacing: -0.15em;
+		font-weight: 300;
+		margin: 0;
+		span {
+			font-weight: 800;
+		}
+	}
+	p {
+		margin: 0;
+		letter-spacing: 1px;
+		font-size: 68.5%;
+	}
+}
+figure.effect-ruby {
+	background-color: black;
+	img {
+		width: 100%;
+		height: auto;
+		opacity: 0.7;
+		transition: opacity 0.35s, transform 0.35s;
+		transform: scale(1.15);
+	}
+	&:hover {
+		img {
+			opacity: 0.5;
+			transform: scale(1);
+		}
+		h2 {
+			transform: translate3d(0,0,0);
+		}
+		p {
+			opacity: 1;
+			transform: translate3d(0,0,0) scale(1);
+		}
+	}
+	h2 {
+		margin-top: 8%;
+		transition: transform 0.35s;
+		transform: translate3d(0,20px,0);
+	}
+	p {
+		margin: 0.1em 0 0;
+		padding: 0.3em;
+		border: 1px solid white;
+		opacity: 0;
+		transition: opacity 0.35s, transform 0.35s;
+		transform: translate3d(0,20px,0) scale(1.1);
+	}
+}
+/* ==========================================================================
+   About Us modul
+   ========================================================================== */
+
+.aboutus {
+	padding: 0.5em;
+	background: $c-blue;
+	color: $c-orange;
+	@include clearfix;
+
+	&-img {
+		width: 100%;
+	  	height: auto;
+	  	  @include bp(phone) { 
+	  		padding: 0.5em;
+	  		width: 33.3%; 
+	  		float: left;
+	  	  }
+	}
+}
+
+/* ==========================================================================
+   Box Home silent class
+   ========================================================================== */
+
+%modules-home {
+	margin-top: 1em;
+	padding: 0.5em;
+	width:100%;
+	height: auto;
+	@include clearfix;
+		@include bp(phone) { 
+		  		padding: 0.5em;
+		  		width: 50%;
+		  		height:10em;
+		  		float: left;
+		  	  }
+}
+
+%modules-home-img {
+	width: 33.3%;
+  	height: auto;
+  	display: block;
+	margin: 0 auto;
+  	  @include bp(phone) { 
+  		padding: 0.5em;
+  		float: left;
+  	  }
+}
+
+/* ==========================================================================
+   Conditions modul extends Box Home silent class
+   ========================================================================== */
+
+.conditions {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img;
+			@include bp(phone) { 
+	  	  }
+	}
+}
+
+/* ==========================================================================
+   Contact modul extends Box Home silent class
+   ========================================================================== */
+
+.contact {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img;
+	}
+}
+
+/* ==========================================================================
+   Download modul extends Box Home silent class
+   ========================================================================== */
+
+.download {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img
+	}
+}
+
+/* ==========================================================================
+   Download modul extends Box Home silent class
+   ========================================================================== */
+
+.customers {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img
+	}
+}

@@ -34,6 +34,7 @@ Tags:
 /* ==========================================================================
    Variables
    ========================================================================== */
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,700|Roboto+Condensed:400,700);
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -216,7 +217,7 @@ svg:not(:root) {
  * Address margin not present in IE 8/9 and Safari.
  */
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 /**
@@ -550,7 +551,12 @@ img {
 /* ==========================================================================
    Typography
    ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Oswald", sans-serif;
+}
+
 p {
+  font-family: "Roboto", sans-serif;
   margin-bottom: 1.5em;
 }
 
@@ -725,7 +731,7 @@ address {
    Layout
    ========================================================================== */
 #page {
-  max-width: 1000px;
+  max-width: 1500px;
   margin: 20px auto;
 }
 
@@ -759,31 +765,6 @@ address {
 /* ==========================================================================
    Menus
    ========================================================================== */
-.mainmenu:before, .mainmenu:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.mainmenu:after {
-  clear: both;
-}
-.mainmenu-family {
-  width: 100%;
-  padding: 0.5em;
-}
-@media (min-width: 768px) {
-  .mainmenu-family {
-    float: left;
-    padding: 0.5em;
-    width: 33.3%;
-  }
-}
-.mainmenu-img {
-  width: 100%;
-  height: auto;
-}
-
 .main-navigation {
   clear: both;
   display: block;
@@ -951,6 +932,239 @@ object {
    Home Page Template
    ========================================================================== */
 /* ==========================================================================
+   Main modul
+   ========================================================================== */
+.mainmenu:before, .mainmenu:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.mainmenu:after {
+  clear: both;
+}
+.mainmenu-products {
+  position: relative;
+  width: 100%;
+  padding: 0.5em;
+  float: left;
+}
+@media (min-width: 768px) {
+  .mainmenu-products {
+    float: left;
+    padding: 0.5em;
+    width: 33.3%;
+  }
+}
+.mainmenu-mask {
+  background: black;
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 0.5em;
+}
+.mainmenu-img {
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Main menu products, animation effet called "ruby"
+   ========================================================================== */
+.mainmenu-products figure figcaption, .mainmenu-products figure figcaption > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mainmenu-products figure {
+  position: relative;
+  float: left;
+  overflow: hidden;
+  margin: 1%;
+  min-width: 98%;
+  max-width: 480px;
+  max-height: 360px;
+  width: 48%;
+  background: black;
+  text-align: center;
+  cursor: pointer;
+}
+.mainmenu-products figure img {
+  position: relative;
+  display: block;
+  min-height: 100%;
+  max-width: 100%;
+  opacity: 0.8;
+}
+.mainmenu-products figure figcaption {
+  padding: 2em;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.25em;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.mainmenu-products figure figcaption > a {
+  z-index: 1000;
+  text-indent: 200%;
+  white-space: nowrap;
+  font-size: 0;
+  opacity: 0;
+}
+.mainmenu-products figure figcaption::before {
+  pointer-events: none;
+}
+.mainmenu-products figure figcaption::after {
+  pointer-events: none;
+}
+.mainmenu-products figure h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+  margin: 0;
+}
+.mainmenu-products figure h2 span {
+  font-weight: 800;
+}
+.mainmenu-products figure p {
+  margin: 0;
+  letter-spacing: 1px;
+  font-size: 68.5%;
+}
+
+figure.effect-ruby {
+  background-color: black;
+}
+figure.effect-ruby img {
+  width: 100%;
+  height: auto;
+  opacity: 0.7;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: scale(1.15);
+      -ms-transform: scale(1.15);
+          transform: scale(1.15);
+}
+figure.effect-ruby:hover img {
+  opacity: 0.5;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+figure.effect-ruby:hover h2 {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+figure.effect-ruby:hover p {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0) scale(1);
+          transform: translate3d(0, 0, 0) scale(1);
+}
+figure.effect-ruby h2 {
+  margin-top: 8%;
+  -webkit-transition: -webkit-transform 0.35s;
+          transition: transform 0.35s;
+  -webkit-transform: translate3d(0, 20px, 0);
+          transform: translate3d(0, 20px, 0);
+}
+figure.effect-ruby p {
+  margin: 0.1em 0 0;
+  padding: 0.3em;
+  border: 1px solid white;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+          transition: opacity 0.35s, transform 0.35s;
+  -webkit-transform: translate3d(0, 20px, 0) scale(1.1);
+          transform: translate3d(0, 20px, 0) scale(1.1);
+}
+
+/* ==========================================================================
+   About Us modul
+   ========================================================================== */
+.aboutus {
+  padding: 0.5em;
+  background: #073e41;
+  color: #ffd6ac;
+}
+.aboutus:before, .aboutus:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.aboutus:after {
+  clear: both;
+}
+.aboutus-img {
+  width: 100%;
+  height: auto;
+}
+@media (min-width: 768px) {
+  .aboutus-img {
+    padding: 0.5em;
+    width: 33.3%;
+    float: left;
+  }
+}
+
+/* ==========================================================================
+   Box Home silent class
+   ========================================================================== */
+.conditions, .contact, .download, .customers {
+  margin-top: 1em;
+  padding: 0.5em;
+  width: 100%;
+  height: auto;
+}
+.conditions:before, .contact:before, .download:before, .customers:before, .conditions:after, .contact:after, .download:after, .customers:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.conditions:after, .contact:after, .download:after, .customers:after {
+  clear: both;
+}
+@media (min-width: 768px) {
+  .conditions, .contact, .download, .customers {
+    padding: 0.5em;
+    width: 50%;
+    height: 10em;
+    float: left;
+  }
+}
+
+.conditions-img, .contact-img, .download-img, .customers-img {
+  width: 33.3%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .conditions-img, .contact-img, .download-img, .customers-img {
+    padding: 0.5em;
+    float: left;
+  }
+}
+
+/* ==========================================================================
+   Conditions modul extends Box Home silent class
+   ========================================================================== */
+/* ==========================================================================
+   Contact modul extends Box Home silent class
+   ========================================================================== */
+/* ==========================================================================
+   Download modul extends Box Home silent class
+   ========================================================================== */
+/* ==========================================================================
+   Download modul extends Box Home silent class
+   ========================================================================== */
+/* ==========================================================================
    Blog pages
    ========================================================================== */
 /* ==========================================================================
@@ -1095,32 +1309,6 @@ object {
   h2,
   h3 {
     page-break-after: avoid;
-  }
-}
-/* ==========================================================================
-   About Us modul
-   ========================================================================== */
-.aboutus {
-  background: lime;
-}
-.aboutus:before, .aboutus:after {
-  content: " ";
-  /* 1 */
-  display: table;
-  /* 2 */
-}
-.aboutus:after {
-  clear: both;
-}
-.aboutus-img {
-  width: 100%;
-  height: auto;
-}
-@media (min-width: 768px) {
-  .aboutus-img {
-    padding: 0.5em;
-    width: 33.3%;
-    float: left;
   }
 }
 
