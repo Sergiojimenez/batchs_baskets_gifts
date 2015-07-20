@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Home Page Template
+   Home Page Tremplate
    ========================================================================== */
 
 /* ==========================================================================
@@ -8,17 +8,16 @@
 
 .mainmenu{
 	@include clearfix;
-	
 	&-products {
-	  position: relative;	
+	  position: relative;
 	  width: 100%;
-	  padding: 0.5em;
+	  padding: 0.5rem;
 	  float: left;
-		@include bp(phone) { 
+		@include bp(phone) {
 			float: left;
-			padding: 0.5em;
-			width: 33.3%; 
-		} 
+			padding: 0.5rem;
+			width: 33.3%;
+		}
 	}
 	&-mask {
 		background: black;
@@ -28,7 +27,7 @@
     	left: 0;
     	min-width: 100%;
     	min-height: 100%;
-    	padding: 0.5em;
+    	padding: 0.5rem;
 	}
 	&-img {
 	  width: 100%;
@@ -40,7 +39,7 @@
    Main menu products, animation effet called "ruby"
    ========================================================================== */
 
-%extend_1 {
+%full_size {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -64,19 +63,18 @@
 	img {
 		position: relative;
 		display: block;
-		min-height: 100%;
 		max-width: 100%;
 		opacity: 0.8;
 	}
 	figcaption {
-		padding: 2em;
+		padding: 2rem;
 		color: white;
 		text-transform: uppercase;
-		font-size: 1.25em;
+		font-size: 1.25rem;
 		backface-visibility: hidden;
-		@extend %extend_1;
+		@extend %full_size;
 		> a {
-			@extend %extend_1;
+			@extend %full_size;
 			z-index: 1000;
 			text-indent: 200%;
 			white-space: nowrap;
@@ -91,7 +89,7 @@
 		pointer-events: none;
 	}
 	h2 {
-		word-spacing: -0.15em;
+		word-spacing: -0.15rem;
 		font-weight: 300;
 		margin: 0;
 		span {
@@ -132,8 +130,8 @@ figure.effect-ruby {
 		transform: translate3d(0,20px,0);
 	}
 	p {
-		margin: 0.1em 0 0;
-		padding: 0.3em;
+		margin: 0.1rem 0 0;
+		padding: 0.3rem;
 		border: 1px solid white;
 		opacity: 0;
 		transition: opacity 0.35s, transform 0.35s;
@@ -145,7 +143,7 @@ figure.effect-ruby {
    ========================================================================== */
 
 .aboutus {
-	padding: 0.5em;
+	padding: 0.5rem;
 	background: $c-blue;
 	color: $c-orange;
 	@include clearfix;
@@ -153,9 +151,9 @@ figure.effect-ruby {
 	&-img {
 		width: 100%;
 	  	height: auto;
-	  	  @include bp(phone) { 
-	  		padding: 0.5em;
-	  		width: 33.3%; 
+	  	  @include bp(phone) {
+	  		padding: 0.5rem;
+	  		width: 33.3%;
 	  		float: left;
 	  	  }
 	}
@@ -166,15 +164,15 @@ figure.effect-ruby {
    ========================================================================== */
 
 %modules-home {
-	margin-top: 1em;
-	padding: 0.5em;
+	margin-top: 1rem;
+	padding: 0.5rem;
 	width:100%;
 	height: auto;
 	@include clearfix;
-		@include bp(phone) { 
-		  		padding: 0.5em;
+		@include bp(phone) {
+		  		padding: 0.5rem;
 		  		width: 50%;
-		  		height:10em;
+		  		height:10rem;
 		  		float: left;
 		  	  }
 }
@@ -184,8 +182,8 @@ figure.effect-ruby {
   	height: auto;
   	display: block;
 	margin: 0 auto;
-  	  @include bp(phone) { 
-  		padding: 0.5em;
+  	  @include bp(phone) {
+  		padding: 0.5rem;
   		float: left;
   	  }
 }
@@ -198,7 +196,7 @@ figure.effect-ruby {
 	@extend %modules-home;
 	&-img {
 		@extend %modules-home-img;
-			@include bp(phone) { 
+			@include bp(phone) {
 	  	  }
 	}
 }

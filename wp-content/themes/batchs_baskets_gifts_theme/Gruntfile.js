@@ -5,7 +5,6 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.initConfig({
-
         // watch for changes and trigger sass, jshint, uglify and livereload
         watch: {
             sass: {
@@ -49,6 +48,18 @@ module.exports = function(grunt) {
             },
         },
 
+        // rem minify
+        remfallback: {
+            options: {
+              log: false,
+              replace: false
+            },
+         your_target: {
+            files: {
+                'assets/styles/build/style.css': ['assets/styles/build/style.css']
+                }
+            }
+        },
         // css minify
         cssmin: {
             options: {

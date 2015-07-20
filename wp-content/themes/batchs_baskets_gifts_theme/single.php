@@ -8,24 +8,23 @@
 get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
-		<?php while ( have_posts() ) : the_post(); ?>
-
+		<div class="product">
+			<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', 'single' ); ?>
+				<ul>
+					<?php
+						$field = get_field_object('bebida');
+						$colors = get_field('bebida');
 
+						foreach($colors as $key => $val) {
+				    		$label = $colors[$key];
+				    		echo '<li>This is your label: '. $field['choices'][$label].'</li>';
+					}?>
+				</ul>
 			<?php _mbbasetheme_post_nav(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // end of the loop. ?>
-
+			<?php endwhile; // end of the loop. ?>
+		</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
