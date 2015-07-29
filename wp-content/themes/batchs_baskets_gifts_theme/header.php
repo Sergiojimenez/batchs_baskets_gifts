@@ -15,6 +15,8 @@
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/favicon.ico">
 	<link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png">
 	<?php wp_head(); ?>
+	<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/./assets/js/main.min.js" ></script>
+	<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/./assets/js/plugins.min.js" ></script>
 </head>
 
 <body <?php body_class(); ?>>
@@ -33,11 +35,21 @@
   				</a>
 			</h1>
 		</div>
+	<?php wp_nav_menu( array('menu' => 'contact' )); ?>
+	
+<div id="toggle">
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle"><?php _e( 'Primary Menu', '_mbbasetheme' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
+<div id="menu">
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<button class="menu-toggle"><?php _e( 'Primary Menu', '_mbbasetheme' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	</nav><!-- #site-navigation -->
+</div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

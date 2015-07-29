@@ -64,6 +64,12 @@ require get_template_directory() . '/lib/theme-require-plugins.php';
 Misc Theme Functions
 *****************************************/
 
+if ( function_exists( 'add_theme_support' ) )
+add_theme_support( 'post-thumbnails' );
+
+add_theme_support( 'post-thumbnails', array( 'post' ) );          // Posts only
+
+
 /**
  * Define custom post type capabilities for use with Members
  */
@@ -79,3 +85,28 @@ add_filter( 'wpseo_metabox_prio', 'mb_filter_yoast_seo_metabox' );
 function mb_filter_yoast_seo_metabox() {
 	return 'low';
 }
+
+
+function catch_that_image() {
+  global $post, $posts;
+  $first_img = '';
+  ob_start();
+  ob_end_clean();
+  $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*>/i', $post->post_content, $matches);
+  $first_img = $matches[1][0];
+
+  if(empty($first_img)) {
+    $first_img = "/path/to/default.png";
+  }
+  return $first_img;
+}
+
+if ( function_exists( 'register_nav_menus' ) ) { //Primero te aseguras que exista la función
+register_nav_menus(
+array(
+'menu_p' => 'contact' //Escoge un nombre que te sea fácil de identificar
+)
+);
+}
+
+

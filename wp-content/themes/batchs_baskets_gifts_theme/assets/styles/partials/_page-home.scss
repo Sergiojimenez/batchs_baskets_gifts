@@ -8,6 +8,8 @@
 
 .mainmenu{
 	@include clearfix;
+	max-width: 90%;
+	margin: 3% auto;
 	&-products {
 	  position: relative;
 	  width: 100%;
@@ -36,7 +38,7 @@
 }
 
 /* ==========================================================================
-   Main menu products, animation effet called "ruby"
+   Main menu products, animation effect called "ruby"
    ========================================================================== */
 
 %full_size {
@@ -89,7 +91,7 @@
 		pointer-events: none;
 	}
 	h2 {
-		word-spacing: -0.15rem;
+		font-size: 2em;
 		font-weight: 300;
 		margin: 0;
 		span {
@@ -112,6 +114,10 @@ figure.effect-ruby {
 		transform: scale(1.15);
 	}
 	&:hover {
+		@include card(2);
+		transition: transform 0.35s;
+		transform: scale(1.01);
+
 		img {
 			opacity: 0.5;
 			transform: scale(1);
@@ -145,12 +151,31 @@ figure.effect-ruby {
 .aboutus {
 	padding: 0.5rem;
 	background: $c-blue;
-	color: $c-orange;
+	color: $c-grey-text;
+	@include card(2);
 	@include clearfix;
-
+	&-content {
+		margin: 3% auto;
+		max-width:90%;
+	}
+	&-text {
+		float: left;
+		width: 100%;
+		padding-bottom:3em;
+		@include bp(phone) {
+	  		padding-left: 7rem;
+	  		width: 65%;
+	  	  } 
+	  	  h1 {
+	  	  	font-size: 1.5em;
+	  	  	margin-top: 0;
+	  	  	color:$c-orange;
+	  	  }
+	}
 	&-img {
 		width: 100%;
 	  	height: auto;
+	  	margin-bottom: 2%;
 	  	  @include bp(phone) {
 	  		padding: 0.5rem;
 	  		width: 33.3%;
@@ -164,34 +189,40 @@ figure.effect-ruby {
    ========================================================================== */
 
 %modules-home {
-	margin-top: 1rem;
+	margin: 2rem;
 	padding: 0.5rem;
 	width:100%;
-	height: auto;
-	@include clearfix;
 		@include bp(phone) {
-		  		padding: 0.5rem;
-		  		width: 50%;
-		  		height:10rem;
+		  		margin: 0.5rem;
+		  		width: 48%;
 		  		float: left;
+
 		  	  }
 }
 
 %modules-home-img {
-	width: 33.3%;
+	padding: 0.5em ;
+	max-width: 150px;
   	height: auto;
   	display: block;
 	margin: 0 auto;
+	@include clearfix;
   	  @include bp(phone) {
-  		padding: 0.5rem;
+  		padding: 0 2em;
   		float: left;
   	  }
 }
 
+.info-modules {
+	max-width: 90%;
+	margin: 2em auto;
+
+}
+
+
 /* ==========================================================================
    Conditions modul extends Box Home silent class
    ========================================================================== */
-
 .conditions {
 	@extend %modules-home;
 	&-img {

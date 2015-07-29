@@ -14,7 +14,7 @@
 		@media (min-width : 1024px) { @content; }
 	}
 	@else if $point == phone {
-		@media (min-width : 768px) { @content; }
+		@media (min-width : 868px) { @content; }
 	}
 }
 
@@ -89,3 +89,14 @@
 			 url($font-url + '/' + $font-name + '.svg#' + $font-name) format('svg');
 	}
 }
+
+@mixin card($depth) {
+  @if $depth < 1 {
+    box-shadow: none;
+  } @else if $depth > 5 {
+    @warn "Invalid $depth `#{$depth}` for mixin `card`.";
+  } @else {
+    box-shadow: bottom-shadow($depth), top-shadow($depth);
+  }
+}
+

@@ -13,6 +13,7 @@ Tags:
 
 // Reset, Variables, Mixins, Etc
 // DO NOT EDIT ORDER OF FILES
+@import "partials/functions";
 @import "partials/mixins";
 @import "partials/variables";
 @import "partials/normalize";
@@ -43,5 +44,8 @@ Tags:
 // Helper Classes, Print, Etc
 @import "partials/helpers";
 @import "partials/print";
+@import "partials/contact-form";
+@import "partials/card";
+@import "partials/list-products";
 
 

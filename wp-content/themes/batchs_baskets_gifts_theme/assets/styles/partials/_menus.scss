@@ -2,25 +2,54 @@
    Menus
    ========================================================================== */
 
+%main-navigation-hover {
+	color: $white;
+	background: $c-red;
+	border-radius: 4px;
+}
+
+
 .main-navigation {
 	float: right;
-}
+	margin-top: 0;
+	font-size: 14px;
+		
+		@include bp(tablet) {
+			margin-top:4em;
+			margin-right: 2.8em;
 
-.main-navigation ul {
-	list-style: none;
-	margin: 0;
-	padding-left: 0;
-}
+		}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+	li {
+		float: left;
+		list-style-type: none;
+		position: relative;
 
-.main-navigation li {
-	float: left;
-	position: relative;
-}
-
-.main-navigation a {
-	display: block;
+	}
+	a {
+	display: block;	
+	padding: 10px 15px;
+	color: $white_80;
 	text-decoration: none;
+	font-weight: bold;
+	text-shadow: 0 1px 1px $black_30;
+	transition: all 0.30s ease-in-out;
+		&:hover {
+			@extend %main-navigation-hover;
+		}
+		&:focus {
+			@extend %main-navigation-hover;
+		}
+	}
 }
+
+
+
+
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -66,16 +95,50 @@
 	cursor: pointer;
 	display: none;
 }
+@media screen and (max-width: 768px) {
+.main-navigation {
+	margin-top: 0;
+	width: 100%;
+}
 
-@media screen and (max-width: 600px) {
-	.menu-toggle,
-	.main-navigation.toggled .nav-menu {
-		display: block;
-	}
+.main-navigation li {
+	float: none;
+}
 
-	.main-navigation ul {
-		display: none;
-	}
+#toggle {
+  width: 28px;
+  height: 30px;
+  margin: 6%;
+  float: right;
+}
+
+#toggle div {
+  width: 100%;
+  height: 5px;
+  background: white;
+  margin: 4px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+#toggle.on .one {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on .two {
+  opacity: 0;
+}
+
+#toggle.on .three {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+#menu {
+  border-radius: 3px;
+  text-align: center;
+  margin: auto;
+  display: none;
+}
 }
 
 .site-main .comment-navigation,

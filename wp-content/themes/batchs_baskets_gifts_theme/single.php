@@ -11,18 +11,11 @@ get_header(); ?>
 		<div class="product">
 			<?php while ( have_posts() ) : the_post(); ?>
 			<?php get_template_part( 'content', 'single' ); ?>
-				<ul>
-					<?php
-						$field = get_field_object('bebida');
-						$colors = get_field('bebida');
-
-						foreach($colors as $key => $val) {
-				    		$label = $colors[$key];
-				    		echo '<li>This is your label: '. $field['choices'][$label].'</li>';
-					}?>
-				</ul>
 			<?php _mbbasetheme_post_nav(); ?>
 			<?php endwhile; // end of the loop. ?>
+		</div>
+		<div class='form'>
+			<?php get_template_part( 'form' );  ?>
 		</div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
