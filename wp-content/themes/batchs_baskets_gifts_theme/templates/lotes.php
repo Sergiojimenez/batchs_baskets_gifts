@@ -45,3 +45,5 @@ wp_reset_query();  // Restore global post data stomped by the_post().
 <div class='form'>
   <?php get_template_part( 'form' );  ?>
 </div>
+
+<?php get_footer(); ?>

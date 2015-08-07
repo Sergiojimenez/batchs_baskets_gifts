@@ -10,6 +10,7 @@
 	@include clearfix;
 	max-width: 90%;
 	margin: 3% auto;
+	margin-top: 11em;
 	&-products {
 	  position: relative;
 	  width: 100%;
@@ -93,6 +94,7 @@
 	h2 {
 		font-size: 2em;
 		font-weight: 300;
+		letter-spacing: 1px;
 		margin: 0;
 		span {
 			font-weight: 800;
@@ -105,6 +107,7 @@
 	}
 }
 figure.effect-ruby {
+	border: white 5px solid;
 	background-color: black;
 	img {
 		width: 100%;
@@ -133,7 +136,7 @@ figure.effect-ruby {
 	h2 {
 		margin-top: 8%;
 		transition: transform 0.35s;
-		transform: translate3d(0,20px,0);
+		transform: translate3d(0,1em,0);
 	}
 	p {
 		margin: 0.1rem 0 0;
@@ -141,7 +144,7 @@ figure.effect-ruby {
 		border: 1px solid white;
 		opacity: 0;
 		transition: opacity 0.35s, transform 0.35s;
-		transform: translate3d(0,20px,0) scale(1.1);
+		transform: translate3d(0,1em,0) scale(1.1);
 	}
 }
 /* ==========================================================================
@@ -149,8 +152,8 @@ figure.effect-ruby {
    ========================================================================== */
 
 .aboutus {
-	padding: 0.5rem;
-	background: $c-blue;
+	padding: 2.5rem;
+	background: white;
 	color: $c-grey-text;
 	@include card(2);
 	@include clearfix;
@@ -165,17 +168,18 @@ figure.effect-ruby {
 		@include bp(phone) {
 	  		padding-left: 7rem;
 	  		width: 65%;
-	  	  } 
+	  	  }
 	  	  h1 {
 	  	  	font-size: 1.5em;
 	  	  	margin-top: 0;
-	  	  	color:$c-orange;
+	  	  	color:#444444;
 	  	  }
+
 	}
 	&-img {
 		width: 100%;
 	  	height: auto;
-	  	margin-bottom: 2%;
+	  	margin-bottom: 4%;
 	  	  @include bp(phone) {
 	  		padding: 0.5rem;
 	  		width: 33.3%;
@@ -189,16 +193,29 @@ figure.effect-ruby {
    ========================================================================== */
 
 %modules-home {
-	margin: 2rem;
 	padding: 0.5rem;
+	margin-top:1em;
 	width:100%;
+	text-align: center;
+
+	a {
+		color: white;
+		text-decoration: none;
+		width:100%;
+	}
 		@include bp(phone) {
 		  		margin: 0.5rem;
 		  		width: 48%;
 		  		float: left;
-
+		  		margin-bottom:2em;
+		  		a {
+		  			color: white;
+		  		}
+		  		:hover {
+		  			text-decoration: none;
+		  		}
 		  	  }
-}
+	}
 
 %modules-home-img {
 	padding: 0.5em ;
@@ -208,6 +225,20 @@ figure.effect-ruby {
 	margin: 0 auto;
 	@include clearfix;
   	  @include bp(phone) {
+  		padding: 0 2em;
+  		float: left;
+  	  }
+}
+
+%button-home-menu {
+    font-size: 1em;
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    border: 0;
+    transition: all 0.3s ease 0s;
+    @include bp(phone) {
+    	text-align: center;
   		padding: 0 2em;
   		float: left;
   	  }
@@ -227,11 +258,28 @@ figure.effect-ruby {
 	@extend %modules-home;
 	&-img {
 		@extend %modules-home-img;
-			@include bp(phone) {
-	  	  }
 	}
 }
-
+.conditions-contact-link {
+	@extend %button-home-menu;
+    background: $c-red-dark;
+    color: #fff;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/newspaper.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 35px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 35px;
+	}
+}
 /* ==========================================================================
    Contact modul extends Box Home silent class
    ========================================================================== */
@@ -240,6 +288,27 @@ figure.effect-ruby {
 	@extend %modules-home;
 	&-img {
 		@extend %modules-home-img;
+	}
+}
+
+.contact-contact-link {
+	@extend %button-home-menu;
+    background: $c-red-dark;
+    color: #fff;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/mail4.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 35px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 35px;
 	}
 }
 
@@ -254,6 +323,26 @@ figure.effect-ruby {
 	}
 }
 
+.download-contact-link {
+	@extend %button-home-menu;
+    background: $c-red-dark;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/download2.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 30px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 30px;
+	}
+}
+
 /* ==========================================================================
    Download modul extends Box Home silent class
    ========================================================================== */
@@ -264,3 +353,27 @@ figure.effect-ruby {
 		@extend %modules-home-img
 	}
 }
+
+
+.customers-contact-link {
+	@extend %button-home-menu;
+	color: #fff;
+    background: $c-red-dark;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/user-tie.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 30px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 30px;
+	}
+}
+
+

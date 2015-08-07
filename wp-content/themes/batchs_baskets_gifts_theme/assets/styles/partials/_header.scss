@@ -3,29 +3,30 @@
    ========================================================================== */
 
 .site-header {
-	background: $c-blue-dark;
-	border-bottom: 15px $c-blue solid;
+	position:fixed;
+	width:100%;
+	z-index: 1001;
+	background: $c-grey-dark;
 	margin-bottom: 0.7rem;
 	@include card(2);
 
 }
 
 .site-header::after {
-    content:""; 
-    left:0; 
-    bottom:5px; 
-    width:100%; 
-    height:2px;
+    content:"";
+    left:0;
+    bottom:5px;
+    width:100%;
+    height:5px;
     background:$c-red-dark;
 }
 .site-branding {
 	float: left;
 	padding: 1rem;
 	padding-left: 2em;
-	max-width: 30%;
-		@include bp(tablet) {
+	width: 12em;
+		@include bp(phone) {
 			width: 12em;
-			margin:1em;
 
 		}
 }
@@ -39,18 +40,75 @@
 
 
 .menu-contacto-container {
-	li{		
-	padding:0.5em 1em;
+	width: 100%;
+	background:$c-red-dark;
+	display: block;
+		ul {
+			text-align: center;
+		}
+		.menu-item {
+		list-style-type: none;}
+		a {
+		color: $white;
+		font-size: 0.8em;
+			&:hover{
+			text-decoration: none;
+			}
+			&::before {
+			background: url(./assets/images/SVG/mail5.svg) no-repeat top left;
+			content: "";
+			display: block;
+		    display: inline-block;
+		    height: 35px;
+		    margin-right: 5px;
+		    position: relative;
+		    top: 2px;
+		    vertical-align: middle;
+		    width: 35px;
+		}
+	}
+	@include bp(tablet) {
+	li{
+	padding:0.2em 1em;
 	position: absolute;
 	top: 0;
-	right: 5%;
+	right: 4%;
 	background:$c-red-dark;
 	}
 	.menu-item {
 		list-style-type: none;}
-	a { 
+	a {
 		color: $white;
 		font-size: 0.8em;
+			&:hover{
+			text-decoration: none;
+			}
+			&::before {
+			background: url(./assets/images/SVG/mail5.svg) no-repeat top left;
+			content: "";
+			display: block;
+		    display: inline-block;
+		    height: 35px;
+		    margin-right: 5px;
+		    position: relative;
+		    top: 2px;
+		    vertical-align: middle;
+		    width: 35px;
+		}
+	}
 	}
 }
 
+
+.site-header-telf {
+	position:absolute;
+	left: 5%;
+	top: 0.5em;
+	@include bp(tablet) {
+		display: none;
+		}
+	a {
+		color:white;
+		text-decoration: none;
+	}
+}

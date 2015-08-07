@@ -530,7 +530,7 @@ textarea {
    General
    ========================================================================== */
 body {
-  background-color: #FAECDB !important;
+  background-color: #F5F5F5 !important;
 }
 
 /* ==========================================================================
@@ -551,7 +551,7 @@ a:hover {
 img {
   height: auto;
   /* Make sure images are scaled correctly. */
-  max-width: 100%;
+  width: 100%;
   /* Adhere to container width. */
 }
 
@@ -761,7 +761,7 @@ address {
 .container-card {
   width: 100%;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .container-card {
     float: left;
     padding: 0.5rem;
@@ -773,8 +773,10 @@ address {
    Header
    ========================================================================== */
 .site-header {
-  background: #031f20;
-  border-bottom: 15px #073e41 solid;
+  position: fixed;
+  width: 100%;
+  z-index: 1001;
+  background: rgba(68, 68, 68, 0.7);
   margin-bottom: 0.7rem;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
 }
@@ -784,7 +786,7 @@ address {
   left: 0;
   bottom: 5px;
   width: 100%;
-  height: 2px;
+  height: 5px;
   background: #a50a05;
 }
 
@@ -792,12 +794,11 @@ address {
   float: left;
   padding: 1rem;
   padding-left: 2em;
-  max-width: 30%;
+  width: 12em;
 }
-@media (min-width: 1024px) {
+@media (min-width: 880px) {
   .site-branding {
     width: 12em;
-    margin: 1em;
   }
 }
 
@@ -805,12 +806,13 @@ address {
   color: #031f20;
 }
 
-.menu-contacto-container li {
-  padding: 0.5em 1em;
-  position: absolute;
-  top: 0;
-  right: 5%;
+.menu-contacto-container {
+  width: 100%;
   background: #a50a05;
+  display: block;
+}
+.menu-contacto-container ul {
+  text-align: center;
 }
 .menu-contacto-container .menu-item {
   list-style-type: none;
@@ -819,12 +821,122 @@ address {
   color: #ffd6ac;
   font-size: 0.8em;
 }
+.menu-contacto-container a:hover {
+  text-decoration: none;
+}
+.menu-contacto-container a::before {
+  background: url(./assets/images/SVG/mail5.svg) no-repeat top left;
+  content: "";
+  display: block;
+  display: inline-block;
+  height: 35px;
+  margin-right: 5px;
+  position: relative;
+  top: 2px;
+  vertical-align: middle;
+  width: 35px;
+}
+@media (min-width: 1070px) {
+  .menu-contacto-container li {
+    padding: 0.2em 1em;
+    position: absolute;
+    top: 0;
+    right: 4%;
+    background: #a50a05;
+  }
+  .menu-contacto-container .menu-item {
+    list-style-type: none;
+  }
+  .menu-contacto-container a {
+    color: #ffd6ac;
+    font-size: 0.8em;
+  }
+  .menu-contacto-container a:hover {
+    text-decoration: none;
+  }
+  .menu-contacto-container a::before {
+    background: url(./assets/images/SVG/mail5.svg) no-repeat top left;
+    content: "";
+    display: block;
+    display: inline-block;
+    height: 35px;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+    vertical-align: middle;
+    width: 35px;
+  }
+}
+
+.site-header-telf {
+  position: absolute;
+  left: 5%;
+  top: 0.5em;
+}
+@media (min-width: 1070px) {
+  .site-header-telf {
+    display: none;
+  }
+}
+.site-header-telf a {
+  color: white;
+  text-decoration: none;
+}
 
 /* ==========================================================================
    Footer
    ========================================================================== */
 .site-footer {
-  background: #031f20;
+  background: rgba(68, 68, 68, 0.7);
+  border-top: solid 4px #a50a05;
+  margin-top: 1em;
+}
+.site-footer .site-branding {
+  float: right;
+  margin-right: 4em;
+}
+
+.footerMenu {
+  text-align: center;
+}
+@media (min-width: 880px) {
+  .footerMenu {
+    text-align: left;
+    float: left;
+    margin-top: 1em;
+    margin-left: 8em;
+    margin-bottom: 4em;
+  }
+}
+.footerMenu-title {
+  color: #382D2D;
+  font-size: 1.2em;
+  margin-left: -1.5em;
+}
+@media (min-width: 880px) {
+  .footerMenu-list {
+    padding-left: 0;
+  }
+}
+.footerMenu ul {
+  position: relative;
+  right: 1.5em;
+}
+@media (min-width: 880px) {
+  .footerMenu ul {
+    list-style: none;
+    right: 2.1em;
+    position: relative;
+  }
+}
+.footerMenu li {
+  list-style-type: none;
+  padding-left: 0;
+}
+.footerMenu .menu-item a {
+  right: 2.5em;
+  color: #C7C7C7;
+  font-size: 0.8em;
 }
 
 /* ==========================================================================
@@ -839,14 +951,20 @@ address {
 .main-navigation {
   float: right;
   margin-top: 0;
-  font-size: 14px;
+  font-size: 0.7em;
 }
-@media (min-width: 1024px) {
+@media (min-width: 880px) {
   .main-navigation {
-    margin-top: 4em;
-    margin-right: 2.8em;
+    margin-top: 3em;
   }
 }
+@media (min-width: 880px) and (min-width: 1070px) {
+  .main-navigation {
+    margin-top: 4em;
+    margin-right: 2em;
+  }
+}
+
 .main-navigation ul {
   list-style: none;
   margin: 0;
@@ -860,9 +978,10 @@ address {
 .main-navigation a {
   display: block;
   padding: 10px 15px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 1px;
   text-decoration: none;
-  font-weight: bold;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
   -webkit-transition: all 0.30s ease-in-out;
           transition: all 0.30s ease-in-out;
@@ -959,7 +1078,6 @@ address {
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
   float: left;
-  width: 50%;
 }
 
 .comment-navigation .nav-next,
@@ -967,7 +1085,6 @@ address {
 .post-navigation .nav-next {
   float: right;
   text-align: right;
-  width: 50%;
 }
 
 /* ==========================================================================
@@ -979,11 +1096,15 @@ address {
   float: left;
   margin-right: 2em;
 }
-@media (min-width: 868px) {
+@media (min-width: 1070px) {
   .product {
-    width: 60%;
+    margin-top: 7.5em;
+    width: 66.6%;
     padding: 2.5rem;
   }
+}
+.product img {
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
 }
 
 /* -------------------------------- 
@@ -1011,11 +1132,66 @@ a {
   text-decoration: none;
 }
 
+.nav-links {
+  margin-top: 2em;
+}
+
+.nav-previous {
+  background: #073e41;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 1em 2em;
+  text-decoration: none;
+}
+.nav-previous a {
+  color: white;
+}
+
+.nav-previous:hover {
+  background: #031f20;
+  text-decoration: none;
+}
+.nav-previous:hover a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-next {
+  background: #073e41;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 1em 2em;
+}
+.nav-next a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-next:hover {
+  background: #031f20;
+  background-image: -webkit-linear-gradient(top, #031f20, #031f20);
+  background-image: linear-gradient(to bottom, #031f20, #031f20);
+  text-decoration: none;
+}
+.nav-next:hover a {
+  text-decoration: none;
+}
+
 /* ==========================================================================
    Posts and pages
    ========================================================================== */
 .hentry {
   margin: 0 0 1.5em;
+  padding: 10%;
+}
+.hentry li {
+  text-decoration: none;
+  list-style-type: none;
+}
+.hentry a {
+  color: black;
 }
 
 .byline,
@@ -1098,6 +1274,7 @@ object {
 .mainmenu {
   max-width: 90%;
   margin: 3% auto;
+  margin-top: 11em;
 }
 .mainmenu:before, .mainmenu:after {
   content: " ";
@@ -1114,7 +1291,7 @@ object {
   padding: 0.5rem;
   float: left;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .mainmenu-products {
     float: left;
     padding: 0.5rem;
@@ -1190,6 +1367,7 @@ object {
 .mainmenu-products figure h2 {
   font-size: 2em;
   font-weight: 300;
+  letter-spacing: 1px;
   margin: 0;
 }
 .mainmenu-products figure h2 span {
@@ -1202,6 +1380,7 @@ object {
 }
 
 figure.effect-ruby {
+  border: white 5px solid;
   background-color: black;
 }
 figure.effect-ruby img {
@@ -1241,8 +1420,8 @@ figure.effect-ruby h2 {
   margin-top: 8%;
   -webkit-transition: -webkit-transform 0.35s;
           transition: transform 0.35s;
-  -webkit-transform: translate3d(0, 20px, 0);
-          transform: translate3d(0, 20px, 0);
+  -webkit-transform: translate3d(0, 1em, 0);
+          transform: translate3d(0, 1em, 0);
 }
 figure.effect-ruby p {
   margin: 0.1rem 0 0;
@@ -1251,17 +1430,17 @@ figure.effect-ruby p {
   opacity: 0;
   -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
           transition: opacity 0.35s, transform 0.35s;
-  -webkit-transform: translate3d(0, 20px, 0) scale(1.1);
-          transform: translate3d(0, 20px, 0) scale(1.1);
+  -webkit-transform: translate3d(0, 1em, 0) scale(1.1);
+          transform: translate3d(0, 1em, 0) scale(1.1);
 }
 
 /* ==========================================================================
    About Us modul
    ========================================================================== */
 .aboutus {
-  padding: 0.5rem;
-  background: #073e41;
-  color: #B6BBB7;
+  padding: 2.5rem;
+  background: white;
+  color: #382D2D;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.23), 0 3px 12px rgba(0, 0, 0, 0.16);
 }
 .aboutus:before, .aboutus:after {
@@ -1282,7 +1461,7 @@ figure.effect-ruby p {
   width: 100%;
   padding-bottom: 3em;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .aboutus-text {
     padding-left: 7rem;
     width: 65%;
@@ -1291,14 +1470,14 @@ figure.effect-ruby p {
 .aboutus-text h1 {
   font-size: 1.5em;
   margin-top: 0;
-  color: #ffd6ac;
+  color: #444444;
 }
 .aboutus-img {
   width: 100%;
   height: auto;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .aboutus-img {
     padding: 0.5rem;
     width: 33.3%;
@@ -1310,15 +1489,28 @@ figure.effect-ruby p {
    Box Home silent class
    ========================================================================== */
 .conditions, .contact, .download, .customers {
-  margin: 2rem;
   padding: 0.5rem;
+  margin-top: 1em;
+  width: 100%;
+  text-align: center;
+}
+.conditions a, .contact a, .download a, .customers a {
+  color: white;
+  text-decoration: none;
   width: 100%;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .conditions, .contact, .download, .customers {
     margin: 0.5rem;
     width: 48%;
     float: left;
+    margin-bottom: 2em;
+  }
+  .conditions a, .contact a, .download a, .customers a {
+    color: white;
+  }
+  .conditions :hover, .contact :hover, .download :hover, .customers :hover {
+    text-decoration: none;
   }
 }
 
@@ -1338,8 +1530,25 @@ figure.effect-ruby p {
 .conditions-img:after, .contact-img:after, .download-img:after, .customers-img:after {
   clear: both;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .conditions-img, .contact-img, .download-img, .customers-img {
+    padding: 0 2em;
+    float: left;
+  }
+}
+
+.conditions-contact-link, .contact-contact-link, .download-contact-link, .customers-contact-link {
+  font-size: 1em;
+  height: 60px;
+  width: 100%;
+  line-height: 60px;
+  border: 0;
+  -webkit-transition: all 0.3s ease 0s;
+          transition: all 0.3s ease 0s;
+}
+@media (min-width: 880px) {
+  .conditions-contact-link, .contact-contact-link, .download-contact-link, .customers-contact-link {
+    text-align: center;
     padding: 0 2em;
     float: left;
   }
@@ -1353,15 +1562,94 @@ figure.effect-ruby p {
 /* ==========================================================================
    Conditions modul extends Box Home silent class
    ========================================================================== */
+.conditions-contact-link {
+  background: #a50a05;
+  color: #fff;
+}
+.conditions-contact-link:hover {
+  background: #c3170b;
+}
+.conditions-contact-link::before {
+  background: url(./assets/images/SVG/newspaper.svg) no-repeat top left;
+  content: "";
+  display: block;
+  display: inline-block;
+  height: 35px;
+  margin-right: 1em;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 35px;
+}
+
 /* ==========================================================================
    Contact modul extends Box Home silent class
    ========================================================================== */
+.contact-contact-link {
+  background: #a50a05;
+  color: #fff;
+}
+.contact-contact-link:hover {
+  background: #c3170b;
+}
+.contact-contact-link::before {
+  background: url(./assets/images/SVG/mail4.svg) no-repeat top left;
+  content: "";
+  display: block;
+  display: inline-block;
+  height: 35px;
+  margin-right: 1em;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 35px;
+}
+
 /* ==========================================================================
    Download modul extends Box Home silent class
    ========================================================================== */
+.download-contact-link {
+  background: #a50a05;
+}
+.download-contact-link:hover {
+  background: #c3170b;
+}
+.download-contact-link::before {
+  background: url(./assets/images/SVG/download2.svg) no-repeat top left;
+  content: "";
+  display: block;
+  display: inline-block;
+  height: 30px;
+  margin-right: 1em;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 30px;
+}
+
 /* ==========================================================================
    Download modul extends Box Home silent class
    ========================================================================== */
+.customers-contact-link {
+  color: #fff;
+  background: #a50a05;
+}
+.customers-contact-link:hover {
+  background: #c3170b;
+}
+.customers-contact-link::before {
+  background: url(./assets/images/SVG/user-tie.svg) no-repeat top left;
+  content: "";
+  display: block;
+  display: inline-block;
+  height: 30px;
+  margin-right: 1em;
+  position: relative;
+  top: -2px;
+  vertical-align: middle;
+  width: 30px;
+}
+
 /* ==========================================================================
    Blog pages
    ========================================================================== */
@@ -1393,34 +1681,44 @@ figure.effect-ruby p {
    Forms
    ========================================================================== */
 .form {
+  color: white;
   width: 100%;
   padding: 0.6em;
   float: left;
 }
-@media (min-width: 868px) {
+@media (min-width: 1070px) {
   .form {
     width: 30%;
     float: left;
   }
 }
 
-@media (min-width: 868px) {
+.form-page form {
+  margin-top: 3em;
+}
+@media (min-width: 880px) {
   .form-page {
     width: 100%;
-    padding: 10%;
+    padding: 0 5em;
   }
 }
 
 /* Basic Grey */
 .wpcf7-form {
-  background: #dcc8a5;
+  background: rgba(197, 193, 184, 0.7);
   padding: 20px;
+  margin-top: 10em;
+}
+
+.wpcf7-form img {
+  width: 1em;
+  text-align: center;
 }
 
 .wpcf7-form input {
   background: #f6efdf;
   padding: 5px 7px;
-  border: 1px solid #ccb58c;
+  border: 1px solid #f6efdf;
   margin-bottom: 4px;
   width: 100%;
 }
@@ -1428,23 +1726,36 @@ figure.effect-ruby p {
 .wpcf7-form textarea {
   background: #f6efdf;
   padding: 5px 0px 5px 7px;
-  border: 3px solid #ccb58c;
-  border-radius: 7px;
+  border: 3px solid rgba(197, 193, 184, 0.7);
   width: 100%;
 }
 
 .wpcf7-form p {
-  color: #4f2a0f;
+  color: #382D2D;
+  font-weight: 500;
   margin-top: 10px;
 }
 
+.contact-label {
+  color: #382D2D;
+}
+
 .wpcf7-form .wpcf7-submit {
-  background: #4f2a0f;
+  background: #c3170b;
   cursor: pointer;
   padding-left: 15px;
   padding-right: 15px;
   color: #fff;
   width: 100%;
+  height: 3em;
+}
+
+.form-text {
+  max-width: 900px;
+  margin-top: 10em;
+  margin-left: auto;
+  margin-bottom: 0;
+  margin-right: auto;
 }
 
 /* Gravity Forms */
@@ -1938,7 +2249,7 @@ FLoating labels
     top: 20px;
   }
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .contact-form {
     width: 30%;
     padding: 0.5rem;
@@ -1948,7 +2259,7 @@ FLoating labels
 .listProductsGrid {
   width: 100%;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .listProductsGrid {
     width: 69%;
     float: left;
@@ -1967,7 +2278,7 @@ FLoating labels
   color: #272727;
   border-radius: 2px;
 }
-@media (min-width: 868px) {
+@media (min-width: 880px) {
   .card {
     width: 45%;
     margin: 10px;
@@ -2028,6 +2339,19 @@ FLoating labels
 
 .entry-products-list {
   list-style-type: none;
+}
+
+.listProductsGrid {
+  margin-top: 10em;
+}
+
+.conditions-title {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 0.5em;
+  background: white;
+  float: left;
+  color: #c3170b;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -12,11 +12,14 @@
 .main-navigation {
 	float: right;
 	margin-top: 0;
-	font-size: 14px;
-		
+	font-size: 0.7em;
+		@include bp(phone) {
+			margin-top:3em;
 		@include bp(tablet) {
 			margin-top:4em;
-			margin-right: 2.8em;
+			margin-right:2em;
+
+		}
 
 		}
 	ul {
@@ -34,8 +37,9 @@
 	display: block;	
 	padding: 10px 15px;
 	color: $white_80;
+	text-transform: uppercase;
+	letter-spacing: 1px;
 	text-decoration: none;
-	font-weight: bold;
 	text-shadow: 0 1px 1px $black_30;
 	transition: all 0.30s ease-in-out;
 		&:hover {
@@ -152,7 +156,6 @@
 .paging-navigation .nav-previous,
 .post-navigation .nav-previous {
 	float: left;
-	width: 50%;
 }
 
 .comment-navigation .nav-next,
@@ -160,5 +163,4 @@
 .post-navigation .nav-next {
 	float: right;
 	text-align: right;
-	width: 50%;
 }

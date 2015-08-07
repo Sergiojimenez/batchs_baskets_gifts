@@ -28,6 +28,8 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_mbbasetheme' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
+	<div class="site-header-telf"><a href="tel:+34983298828">983 298 828</a></div>
+	<?php wp_nav_menu( array('menu' => 'contact' )); ?>
 		<div class="site-branding">
 			<h1 class="branding-image">
   				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -35,7 +37,6 @@
   				</a>
 			</h1>
 		</div>
-	<?php wp_nav_menu( array('menu' => 'contact' )); ?>
 	
 <div id="toggle">
   <div class="one"></div>

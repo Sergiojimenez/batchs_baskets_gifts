@@ -3,5 +3,54 @@
    ========================================================================== */
 
 .site-footer {
-	background: $c-blue-dark;;
+	background: $c-grey-dark;
+	border-top: solid 4px $c-red-dark;
+	margin-top: 1em;
+	.site-branding {
+		float: right;
+		margin-right: 4em;
+	}
+}
+
+.footerMenu {
+	text-align: center;
+	@include bp(phone) {
+		text-align: left;
+		float: left;
+		margin-top: 1em;
+		margin-left: 8em;
+		margin-bottom: 4em;
+	}
+	&-title {
+		color: $c-grey-text;
+		font-size: 1.2em;
+		margin-left: -1.5em;
+		@include bp(phone) {
+		}
+	}
+	&-list {
+		@include bp(phone) {
+			padding-left: 0;
+		}
+	}
+	ul {
+		position: relative;
+		right: 1.5em;
+
+		@include bp(phone) {
+			list-style: none;
+			right: 2.1em;
+			position: relative;
+		}
+	}
+
+	li {
+		list-style-type: none;
+		padding-left: 0;
+	}
+	.menu-item a{
+		right: 2.5em;
+		color: #C7C7C7;
+		font-size: 0.8em;
+	}
 }

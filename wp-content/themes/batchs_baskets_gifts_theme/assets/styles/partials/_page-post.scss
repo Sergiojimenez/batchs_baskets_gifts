@@ -7,10 +7,14 @@
 	padding: 0.5em;
 	float: left;
 	margin-right: 2em;
-		@include bp(phone) {
-			width: 60%;
+		@include bp(tablet) {
+			margin-top: 7.5em;
+			width: 66.6%;
 			padding: 2.5rem;
 		}
+   img {
+        @include card(2);
+   } 
 }
 
 
@@ -40,6 +44,55 @@ a {
   color: #2c97de;
   text-decoration: none;
 }
+.nav-links {
+	margin-top:2em;
+}
+.nav-previous {
+  background: $c-blue;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 1em 2em;
+  text-decoration: none;
+  a {
+  	color: white;
+  }
+}
+
+.nav-previous:hover {
+  background: $c-blue-dark;
+  text-decoration: none;
+    a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.nav-next {
+  background: $c-blue;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 1em 2em;
+  a {
+  	color: white;
+  	text-decoration: none;
+  }
+}
+
+.nav-next:hover {
+  background: $c-blue-dark;
+  background-image: -webkit-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: -moz-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: -ms-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: -o-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: linear-gradient(to bottom, $c-blue-dark, $c-blue-dark);
+  text-decoration: none;
+    a {
+  	 text-decoration: none;
+  }
+
+}
 
 /* ==========================================================================
    Posts and pages
@@ -50,6 +103,15 @@ a {
 
 .hentry {
 	margin: 0 0 1.5em;
+	padding: 10%;
+	li {
+		text-decoration: none;
+		list-style-type: none;
+
+	}
+	a {
+		color: black;
+	}
 }
 
 .byline,
