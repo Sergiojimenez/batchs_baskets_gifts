@@ -10,7 +10,6 @@
 	@include clearfix;
 	max-width: 90%;
 	margin: 3% auto;
-	margin-top: 11em;
 	&-products {
 	  position: relative;
 	  width: 100%;
@@ -96,6 +95,8 @@
 		font-weight: 300;
 		letter-spacing: 1px;
 		margin: 0;
+		    text-shadow: 1px 3px #000;
+
 		span {
 			font-weight: 800;
 		}
@@ -104,6 +105,7 @@
 		margin: 0;
 		letter-spacing: 1px;
 		font-size: 68.5%;
+
 	}
 }
 figure.effect-ruby {
@@ -127,6 +129,7 @@ figure.effect-ruby {
 		}
 		h2 {
 			transform: translate3d(0,0,0);
+
 		}
 		p {
 			opacity: 1;
@@ -154,7 +157,7 @@ figure.effect-ruby {
 .aboutus {
 	padding: 2.5rem;
 	background: white;
-	color: $c-grey-text;
+	color: $c-grey-dark;
 	@include card(2);
 	@include clearfix;
 	&-content {

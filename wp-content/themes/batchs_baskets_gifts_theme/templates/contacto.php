@@ -35,4 +35,7 @@
 		}
 wp_reset_query();  // Restore global post data stomped by the_post().
 ?>
+
+<?php get_footer(); ?>
+
 </div>

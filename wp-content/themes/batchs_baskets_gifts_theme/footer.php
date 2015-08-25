@@ -20,14 +20,21 @@
 		<div class="footerMenu">
 			<h2 class="footerMenu-title">Otros enlaces</h2>
 			<ul class="footerMenu-list">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+				<li class="menu-item">
+					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Condiciones de compra' ) ) ); ?>">Condiciones de compra</a>
+				</li>
+				<li class="menu-item">
+					<a href="<?php echo esc_url( get_permalink( get_page_by_title( 'Customer area' ) ) ); ?>">Area de clientes</a>
+				</li>
+				<li class="menu-item">
+					<a href="">Descargar catálogo</a>
+				</li>
 			</ul>
 		</div>
 		<div class="footerMenu">
-			<h2 class="footerMenu-title">Contacto</h2>
-			<ul class="footerMenu-list">
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-			</ul>
+			<p class="footerMenu-text">Lotes, Cestas y Regalos se encuentra ubicada en:<br>
+			Calle Plomo , 3 – Nave 2<br>
+			47012  Valladolid</p>
 		</div>
 		<div class="contact-enterprise">
 		</div>
@@ -38,6 +45,8 @@
   				</a>
 			</h1>
 		</div>
+
+
 <!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

@@ -3,10 +3,9 @@
    ========================================================================== */
 
 .site-header {
-	position:fixed;
 	width:100%;
 	z-index: 1001;
-	background: $c-grey-dark;
+	background: $c-purple;
 	margin-bottom: 0.7rem;
 	@include card(2);
 
@@ -18,15 +17,14 @@
     bottom:5px;
     width:100%;
     height:5px;
-    background:$c-red-dark;
+    background:#9E0535;
 }
 .site-branding {
 	float: left;
-	padding: 1rem;
 	padding-left: 2em;
 	width: 12em;
-		@include bp(phone) {
-			width: 12em;
+		@include bp(tablet) {
+			width: 17em;
 
 		}
 }

@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .site-footer {
-	background: $c-grey-dark;
+	background: $c-purple;
 	border-top: solid 4px $c-red-dark;
 	margin-top: 1em;
 	.site-branding {
@@ -22,16 +22,19 @@
 		margin-bottom: 4em;
 	}
 	&-title {
-		color: $c-grey-text;
+		color: $c-orange;
 		font-size: 1.2em;
 		margin-left: -1.5em;
-		@include bp(phone) {
-		}
 	}
 	&-list {
 		@include bp(phone) {
 			padding-left: 0;
 		}
+	}
+	&-text {
+		color: #C7C7C7;
+		margin-top: 1.5em;
+		font-size: 0.9em;
 	}
 	ul {
 		position: relative;

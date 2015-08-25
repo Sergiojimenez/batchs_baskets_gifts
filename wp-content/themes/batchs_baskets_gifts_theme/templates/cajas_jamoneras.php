@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Caja jamonera
+ * Template Name: caja__jamonera
  *
  * Selectable from a dropdown menu on the edit page screen.
  */
@@ -9,7 +9,7 @@
         <div id="container" class="listProducts">
             <div id="content" class="listProductsGrid">
 <?php
-$type = 'Caja jamonera';
+$type = 'caja__jamonera';
 $args=array(
   'post_type' => $type,
   'post_status' => 'publish',

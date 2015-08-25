@@ -19,12 +19,14 @@
 		( inputField.val() == '' ) ? inputField.prev('.contact-label').removeClass('float') : inputField.prev('.contact-label').addClass('float');
 	};
 
-	$( document ).ready(function() {
-
-
+	$( window ).load(function() {
 		$('.listProductsGrid').masonry({
 		  itemSelector: '.card'
 		});
+	});
+
+	$( document ).ready(function() {
+
 		$("#toggle").on('click',function() {
 			var $this=$(this);
     			if($this.hasClass('on')){return;};

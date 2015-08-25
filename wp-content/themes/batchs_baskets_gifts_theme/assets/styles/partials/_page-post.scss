@@ -8,7 +8,6 @@
 	float: left;
 	margin-right: 2em;
 		@include bp(tablet) {
-			margin-top: 7.5em;
 			width: 66.6%;
 			padding: 2.5rem;
 		}
@@ -103,7 +102,7 @@ a {
 
 .hentry {
 	margin: 0 0 1.5em;
-	padding: 10%;
+	padding: 2% 10%;
 	li {
 		text-decoration: none;
 		list-style-type: none;

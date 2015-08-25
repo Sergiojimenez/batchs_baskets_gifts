@@ -58,7 +58,7 @@ echo get_page_link($page);
 
 <div class="mainmenu-products">
 <a href="<?php
-$page = get_page_by_title( 'cajas jamoneras' );
+$page = get_page_by_title( 'cajas' );
 echo get_page_link($page);
 ?>">
 <figure class="effect-ruby">

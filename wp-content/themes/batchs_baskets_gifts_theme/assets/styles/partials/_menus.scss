@@ -3,7 +3,7 @@
    ========================================================================== */
 
 %main-navigation-hover {
-	color: $white;
+	color: white;
 	background: $c-red;
 	border-radius: 4px;
 }
@@ -13,10 +13,11 @@
 	float: right;
 	margin-top: 0;
 	font-size: 0.7em;
+	font-weight: bold;
 		@include bp(phone) {
 			margin-top:3em;
 		@include bp(tablet) {
-			margin-top:4em;
+			margin-top:6em;
 			margin-right:2em;
 
 		}
