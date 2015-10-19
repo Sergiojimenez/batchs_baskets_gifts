@@ -1,0 +1,167 @@
+/* ==========================================================================
+   Menus
+   ========================================================================== */
+
+%main-navigation-hover {
+	color: white;
+	background: $c-red;
+	border-radius: 4px;
+}
+
+
+.main-navigation {
+	float: right;
+	margin-top: 0;
+	font-size: 0.7em;
+	font-weight: bold;
+		@include bp(phone) {
+			margin-top:3em;
+		@include bp(tablet) {
+			margin-top:6em;
+			margin-right:2em;
+
+		}
+
+		}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+	}
+	li {
+		float: left;
+		list-style-type: none;
+		position: relative;
+
+	}
+	a {
+	display: block;	
+	padding: 10px 15px;
+	color: $white_80;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px $black_30;
+	transition: all 0.30s ease-in-out;
+		&:hover {
+			@extend %main-navigation-hover;
+		}
+		&:focus {
+			@extend %main-navigation-hover;
+		}
+	}
+}
+
+
+
+
+
+.main-navigation ul ul {
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	display: none;
+	float: left;
+	left: 0;
+	position: absolute;
+	top: 1.5em;
+	z-index: 99999;
+}
+
+.main-navigation ul ul ul {
+	left: 100%;
+	top: 0;
+}
+
+.main-navigation ul ul a {
+	width: 200px;
+}
+
+.main-navigation ul ul li {
+}
+
+.main-navigation li:hover > a {
+}
+
+.main-navigation ul ul :hover > a {
+}
+
+.main-navigation ul ul a:hover {
+}
+
+.main-navigation ul li:hover > ul {
+	display: block;
+}
+
+.main-navigation .current_page_item a,
+.main-navigation .current-menu-item a {
+}
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+	display: none;
+}
+@media screen and (max-width: 768px) {
+.main-navigation {
+	margin-top: 0;
+	width: 100%;
+}
+
+.main-navigation li {
+	float: none;
+}
+
+#toggle {
+  width: 28px;
+  height: 30px;
+  margin: 6%;
+  float: right;
+}
+
+#toggle div {
+  width: 100%;
+  height: 5px;
+  background: white;
+  margin: 4px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+}
+
+#toggle.on .one {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+#toggle.on .two {
+  opacity: 0;
+}
+
+#toggle.on .three {
+  transform: rotate(-45deg) translate(7px, -8px);
+}
+
+#menu {
+  border-radius: 3px;
+  text-align: center;
+  margin: auto;
+  display: none;
+}
+}
+
+.site-main .comment-navigation,
+.site-main .paging-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+}

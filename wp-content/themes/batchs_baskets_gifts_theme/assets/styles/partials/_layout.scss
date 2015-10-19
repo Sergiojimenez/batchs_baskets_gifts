@@ -1,0 +1,33 @@
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+#page {
+	max-width: $pageWidth;
+}
+
+.content-area {
+	float: left;
+	margin: 0 -25% 0 0;
+	width: 100%;
+}
+
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 25%;
+}
+
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+.container-card {
+	width: 100%;
+	@include bp(phone) {
+		float: left;
+		padding: 0.5rem;
+		width: 65%;
+	}
+}

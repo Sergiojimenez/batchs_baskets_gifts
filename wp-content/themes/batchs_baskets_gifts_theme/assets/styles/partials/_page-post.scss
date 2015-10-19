@@ -1,0 +1,194 @@
+/* ==========================================================================
+   Products description
+   ========================================================================== */
+
+.product{
+	width: 100%;
+	padding: 0.5em;
+	float: left;
+	margin-right: 2em;
+		@include bp(tablet) {
+			width: 66.6%;
+			padding: 2.5rem;
+		}
+   img {
+        @include card(2);
+   } 
+}
+
+
+/* -------------------------------- 
+
+Primary style
+
+-------------------------------- */
+*, *::after, *::before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Open Sans", sans-serif;
+  color: #2b3e51;
+  background-color: #ffffff;
+}
+
+a {
+  color: #2c97de;
+  text-decoration: none;
+}
+.nav-links {
+	margin-top:2em;
+}
+.nav-previous {
+  background: $c-blue;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 1em 2em;
+  text-decoration: none;
+  a {
+  	color: white;
+  }
+}
+
+.nav-previous:hover {
+  background: $c-blue-dark;
+  text-decoration: none;
+    a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.nav-next {
+  background: $c-blue;
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 1em;
+  padding: 1em 2em;
+  a {
+  	color: white;
+  	text-decoration: none;
+  }
+}
+
+.nav-next:hover {
+  background: $c-blue-dark;
+  background-image: -webkit-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: -moz-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: -ms-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: -o-linear-gradient(top, $c-blue-dark, $c-blue-dark);
+  background-image: linear-gradient(to bottom, $c-blue-dark, $c-blue-dark);
+  text-decoration: none;
+    a {
+  	 text-decoration: none;
+  }
+
+}
+
+/* ==========================================================================
+   Posts and pages
+   ========================================================================== */
+
+.sticky {
+}
+
+.hentry {
+	margin: 0 0 1.5em;
+	padding: 2% 10%;
+	li {
+		text-decoration: none;
+		list-style-type: none;
+
+	}
+	a {
+		color: black;
+	}
+}
+
+.byline,
+.updated {
+	display: none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+
+.page-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.wp-caption {
+	border: 1px solid #ccc;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+
+.site-main .gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-caption {
+}
+
+.site-main .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+
+.site-main .gallery dd,
+.site-main .gallery figcaption {
+	margin: 0;
+}
+
+.site-main .gallery-columns-4 .gallery-item {
+}
+
+.site-main .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}

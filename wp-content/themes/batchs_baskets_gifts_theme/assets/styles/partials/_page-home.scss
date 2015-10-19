@@ -1,0 +1,382 @@
+/* ==========================================================================
+   Home Page Tremplate
+   ========================================================================== */
+
+/* ==========================================================================
+   Main modul
+   ========================================================================== */
+
+.mainmenu{
+	@include clearfix;
+	max-width: 90%;
+	margin: 3% auto;
+	&-products {
+	  position: relative;
+	  width: 100%;
+	  padding: 0.5rem;
+	  float: left;
+		@include bp(phone) {
+			float: left;
+			padding: 0.5rem;
+			width: 33.3%;
+		}
+	}
+	&-mask {
+		background: black;
+		position:absolute;
+		display: inline-block;
+		top: 0;
+    	left: 0;
+    	min-width: 100%;
+    	min-height: 100%;
+    	padding: 0.5rem;
+	}
+	&-img {
+	  width: 100%;
+	  height: auto;
+	}
+}
+
+/* ==========================================================================
+   Main menu products, animation effect called "ruby"
+   ========================================================================== */
+
+%full_size {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+
+.mainmenu-products figure {
+	position: relative;
+	float: left;
+	overflow: hidden;
+	margin: 1%;
+	min-width: 98%;
+	max-width: 480px;
+	max-height: 360px;
+	width: 48%;
+	background: black;
+	text-align: center;
+	cursor: pointer;
+	img {
+		position: relative;
+		display: block;
+		max-width: 100%;
+		opacity: 0.8;
+	}
+	figcaption {
+		padding: 2rem;
+		color: white;
+		text-transform: uppercase;
+		font-size: 1.25rem;
+		backface-visibility: hidden;
+		@extend %full_size;
+		> a {
+			@extend %full_size;
+			z-index: 1000;
+			text-indent: 200%;
+			white-space: nowrap;
+			font-size: 0;
+			opacity: 0;
+		}
+	}
+	figcaption::before {
+		pointer-events: none;
+	}
+	figcaption::after {
+		pointer-events: none;
+	}
+	h2 {
+		font-size: 2em;
+		font-weight: 300;
+		letter-spacing: 1px;
+		margin: 0;
+		    text-shadow: 1px 3px #000;
+
+		span {
+			font-weight: 800;
+		}
+	}
+	p {
+		margin: 0;
+		letter-spacing: 1px;
+		font-size: 68.5%;
+
+	}
+}
+figure.effect-ruby {
+	border: white 5px solid;
+	background-color: black;
+	img {
+		width: 100%;
+		height: auto;
+		opacity: 0.7;
+		transition: opacity 0.35s, transform 0.35s;
+		transform: scale(1.15);
+	}
+	&:hover {
+		@include card(2);
+		transition: transform 0.35s;
+		transform: scale(1.01);
+
+		img {
+			opacity: 0.5;
+			transform: scale(1);
+		}
+		h2 {
+			transform: translate3d(0,0,0);
+
+		}
+		p {
+			opacity: 1;
+			transform: translate3d(0,0,0) scale(1);
+		}
+	}
+	h2 {
+		margin-top: 8%;
+		transition: transform 0.35s;
+		transform: translate3d(0,1em,0);
+	}
+	p {
+		margin: 0.1rem 0 0;
+		padding: 0.3rem;
+		border: 1px solid white;
+		opacity: 0;
+		transition: opacity 0.35s, transform 0.35s;
+		transform: translate3d(0,1em,0) scale(1.1);
+	}
+}
+/* ==========================================================================
+   About Us modul
+   ========================================================================== */
+
+.aboutus {
+	padding: 2.5rem;
+	background: white;
+	color: $c-grey-dark;
+	@include card(2);
+	@include clearfix;
+	&-content {
+		margin: 3% auto;
+		max-width:90%;
+	}
+	&-text {
+		float: left;
+		width: 100%;
+		padding-bottom:3em;
+		@include bp(phone) {
+	  		padding-left: 7rem;
+	  		width: 65%;
+	  	  }
+	  	  h1 {
+	  	  	font-size: 1.5em;
+	  	  	margin-top: 0;
+	  	  	color:#444444;
+	  	  }
+
+	}
+	&-img {
+		width: 100%;
+	  	height: auto;
+	  	margin-bottom: 4%;
+	  	  @include bp(phone) {
+	  		padding: 0.5rem;
+	  		width: 33.3%;
+	  		float: left;
+	  	  }
+	}
+}
+
+/* ==========================================================================
+   Box Home silent class
+   ========================================================================== */
+
+%modules-home {
+	padding: 0.5rem;
+	margin-top:1em;
+	width:100%;
+	text-align: center;
+
+	a {
+		color: white;
+		text-decoration: none;
+		width:100%;
+	}
+		@include bp(phone) {
+		  		margin: 0.5rem;
+		  		width: 48%;
+		  		float: left;
+		  		margin-bottom:2em;
+		  		a {
+		  			color: white;
+		  		}
+		  		:hover {
+		  			text-decoration: none;
+		  		}
+		  	  }
+	}
+
+%modules-home-img {
+	padding: 0.5em ;
+	max-width: 150px;
+  	height: auto;
+  	display: block;
+	margin: 0 auto;
+	@include clearfix;
+  	  @include bp(phone) {
+  		padding: 0 2em;
+  		float: left;
+  	  }
+}
+
+%button-home-menu {
+    font-size: 1em;
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    border: 0;
+    transition: all 0.3s ease 0s;
+    @include bp(phone) {
+    	text-align: center;
+  		padding: 0 2em;
+  		float: left;
+  	  }
+}
+
+.info-modules {
+	max-width: 90%;
+	margin: 2em auto;
+
+}
+
+
+/* ==========================================================================
+   Conditions modul extends Box Home silent class
+   ========================================================================== */
+.conditions {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img;
+	}
+}
+.conditions-contact-link {
+	@extend %button-home-menu;
+    background: $c-red-dark;
+    color: #fff;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/newspaper.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 35px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 35px;
+	}
+}
+/* ==========================================================================
+   Contact modul extends Box Home silent class
+   ========================================================================== */
+
+.contact {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img;
+	}
+}
+
+.contact-contact-link {
+	@extend %button-home-menu;
+    background: $c-red-dark;
+    color: #fff;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/mail4.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 35px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 35px;
+	}
+}
+
+/* ==========================================================================
+   Download modul extends Box Home silent class
+   ========================================================================== */
+
+.download {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img
+	}
+}
+
+.download-contact-link {
+	@extend %button-home-menu;
+    background: $c-red-dark;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/download2.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 30px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 30px;
+	}
+}
+
+/* ==========================================================================
+   Download modul extends Box Home silent class
+   ========================================================================== */
+
+.customers {
+	@extend %modules-home;
+	&-img {
+		@extend %modules-home-img
+	}
+}
+
+
+.customers-contact-link {
+	@extend %button-home-menu;
+	color: #fff;
+    background: $c-red-dark;
+	&:hover {
+		background: $c-red;
+	}
+	&::before {
+	background: url(./assets/images/SVG/user-tie.svg) no-repeat top left;
+	content: "";
+	display: block;
+    display: inline-block;
+    height: 30px;
+    margin-right: 1em;
+    position: relative;
+    top: -2px;
+    vertical-align: middle;
+    width: 30px;
+	}
+}
+
+
